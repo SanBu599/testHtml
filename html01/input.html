@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <script>
+        function test(){
+            alert("반응합니다");
+        }
+
+    </script>
+</head>
+<body>
+    <form action="weclome.html" method="post">
+        <!--method에 입력안하면 get 기본값이며 URL에 값이 보임-->
+        <!--post는 URL에 보이지 않음-->
+    <input type="text" name="id" value="1234" disabled><br> <!-- 한줄입력창-->
+    <input type="text" value="초기 데이터" readonly><br>
+    <input type="text" placeholder="이름을 입력하세요"><br>
+    <input type="password" name="pwd" maxlength="5"><br> <!--비밀번호입력창-->
+    남자: <input type="radio" name="sex/"> 여자:<input type="radio" name="sex/" checked><br> <!--여러개 중 한개만 선택됨-->
+    사과: <input type="checkbox" name="fruit"> 포도:<input type="checkbox" name="fruit"> 수박: <input type="checkbox" name="fruit" checked><br>
+    <input type="submit" value="전송 버튼"><br>
+    <input type="reset" value="초기화"><br>
+    <input type="button" value="일반 버튼" onclick="test()"><br>
+    <input type="hidden" value="여기에는 전달하고자 하는 값을 넣어줍니다."><br>
+    <input type="file"><br>
+    <hr>
+    <br>
+    <label for="txt">
+        <textarea id="txt" cols="10" rows="7"  placeholder="하고픈말 적어주세요">hihi</textarea>
+    </label>
+    <hr>
+
+    <select>
+        <option>봄</option>
+        <option>여름</option>
+        <option>가을</option>
+        <option selected>겨울</option>
+
+    </select>
+    </form>
+
+</body>
+</html>
