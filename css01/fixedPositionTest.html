@@ -7,25 +7,37 @@
     <title>Document</title>
     <style>
         div{
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
         }
+        body{
+            width: 1000px;
+            height: 1000px;
+        }
+
         #one{
-            background-color: red;
+            background-color:red;
+            position: absolute;
+            top:0px;
+            left:0px;
+
         }
         #two{
             background-color: blue;
-            position: relative;
-            left:150px;
+            position: fixed;
+            left:200px;
+            top:200px;
         }
         #three{
             background-color: green;
-            position: relative;
-            top:-150px;
+            position: fixed;
+            left:100px;
+            top:100px;
         }
     </style>
 </head>
 <body>
+    
     <div id="one"></div>
     <div id="two"></div>
     <div id="three"></div>
