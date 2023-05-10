@@ -8,17 +8,30 @@
 			font-size:20px;
 			/* background-color: blue; */
 		}
+		a:link{
+			color:darkgreen;
+		}
+		a:visited{
+			color:gold;
+		}
 		li a {
 			font-size:30px;
 			background-color: yellow;
 		}
 
-		p + a{
+		p + a {
 			color:chartreuse;
 
 		}
-		p ~ a{
+		p ~ a {
 			color:rgb(215,140,19);
+		}
+		#s01::before {
+			content: "앞에 붙여요.....";
+			color:brown;
+		}
+		#s01::after {
+			content: "   55555555.....";
 		}
 	</style>
 </head>
@@ -107,8 +120,10 @@
 			<div>
 
 				<a href="#"><i></i>
-					<span>전체메뉴 열기</span>
+					<span id="s01">전체메뉴 열기</span>
 				</a>
+				<br>
+				<a href="https://naver.com">naver</a>
 			</div>
 			<!--// header : pu_hd_side_w -->
 		</div>
