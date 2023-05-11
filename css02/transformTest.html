@@ -5,8 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin:50px;
+            
+        }
+        .one:hover{
+            transform: translate(200px,200px);
+        }
+        .two:hover{
+            transform:scale(2,2)
+        }
+        .three:hover{
+            transform:rotate(45deg)
+        }
+        .four:hover{
+            transform: skew(50deg,45deg);
+        }
+        .five:hover{
+            transform:rotate(30deg);
+            transform-origin:left top;
+        }
+    </style>
 </head>
 <body>
-    <div></div>
+    <div class="one">이동</div>
+    <div class="two">확대/축소</div>
+    <div class="three">회전</div>
+    <div class="four">기울기</div>
+    <div class="five">회전축 변경</div>
 </body>
 </html>

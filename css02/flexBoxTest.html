@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            /* width:100px;
+            height: 100px;
+             */
+        }
+        .sub{
+            
+            background-color: red;
+            
+        }
+        .sup{
+            width: 700px;
+            height: 300px;
+            border: 1px solid black;
+            display: flex;
+           /* flex-direction:row/*-reverse;*/
+            /* justify-content: space-around; */
+            /* flex-wrap: wrap-reverse; */
+            /* flex-direction: column; */
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .sub:nth-child(2n){
+            background-color: blue;
+        }
+        .one{
+            align-self: center;
+        }
+        .two{
+            align-self: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <div class="sup">
+        <div class="sub one">num-1</div>
+        <div class="sub two">num-2</div>
+        <div class="sub three">num-3</div>
+        <div class="sub four">num-4</div>
+
+        
+    </div>
+</body>
+</html>
