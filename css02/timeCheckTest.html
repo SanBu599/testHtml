@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:0px;
+            height: 75px;
+            background-color: red;
+            margin:5px 0px;
+            transition-property:width,background-color;
+            transition-duration:5s; 
+        }
+        #one{
+            
+            transition-timing-function: linear;
+        }
+        #two{
+        
+            transition-timing-function: ease;
+        }
+        #three{
+        
+            transition-timing-function: ease-in;
+        }
+        #four{
+        
+            transition-timing-function: ease-out;
+        }
+        #five{
+        
+            transition-timing-function: ease-in-out;
+        }
+        button:hover~div{
+            width: 300px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <button>마우스를 올려보세요</button>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+    <div id="five"></div>
+
+    
+</body>
+</html>
