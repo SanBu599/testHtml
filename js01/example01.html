@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // var num = Math.random(); //          0.0<= x <=1.0
+    //     num *= 10;           //  x 10    0.0<= x <=10.0
+    //     num =parseInt(num);  // x소수점 제거 0<=x<=10
+    //     num += 1;           // x 1 더하기  1<=x<=11
+    // var num = Math.random();
+    //     num *= 45;
+    //     num = parseInt(num);
+    //     num += 1;
+    // console.log(num);
+    // var lotto_number=[];                
+    // for(var i=0;i<6;i++){
+    //     for
+    //     lotto=lotto_number += num;
+    //       for(i in num){
+    //         lotto=lotto_number += i;
+    //         i+=1;
+
+    //       } 
+
+    // console.log(lotto);
+        var lotto_number=[];
+
+    while(true){
+        var num = parseInt(Math.random()*45)+1;
+
+
+        var isExist = false;
+        for(var i = 0; i<lotto_number.length;i++){
+            if(lotto_number[i] == num){
+                isExist=true;
+                break;
+
+            }
+        }
+
+        if(isExist ==false){
+            lotto_number.push(num);
+
+            if(lotto_number.length==6){
+            break;
+            }
+        }
+        
+    }
+    for(var j= 0; j < lotto_number.length;j++){
+        console.log(lotto_number[j])
+    }
+</script>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function calc() {
+        //     alert(10+25);
+        // }
+
+        var test = function(){
+            console.log("일하고싶어요")
+        }
+        // calc();
+        // test();
+
+
+        var exam = () => {
+            console.log("새로운 선언방식입니다.")
+        }
+        exam();
+
+        function clac(one, two){
+            alert(one+two);
+        }
+        function plus(){
+            var one = document.getElementById("one").value;
+            var two = document.getElementById("two").value;
+            clac(parseInt(one), parseInt(two));
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="one">
+    <input type="text" name="" id="two">
+    <button onclick="plus()">계산하세요</button>
+</body>
+</html>

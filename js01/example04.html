@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        //계산기를 만들어요
+        //세개의 <input type ="text"를 만든다.
+        //첫번째 숫자를 입력하는 input에는 id 값으로 "one"을 설정한다
+        //연산자를 입력하는 input에는 id 값으로 "oper"를 설정한다.
+        //두번째 숫자를 입력하는 input에는 id값으로 "two"를 설정한다.
+        //버튼을 클릭하면 calc()를 호출하고, 계산된 결과를 출력한다.
+        function calc(){
+            var one = document.getElementById("one").value;
+            var oper = document.getElementById("oper").value;
+            var two = document.getElementById("two").value;
+            num(parseInt(one),oper,parseInt(two));
+        
+        function num(one,oper,two){
+            
+            
+
+            if(oper=="+"){
+                alert(one+two);
+              
+            }else if(oper=="-"){
+                alert(one-two);
+               
+            }else if(oper=="%"||oper=="/"){
+                alert(one/two);
+            }else if(oper=="*"||oper=="X"||oper=="x"){
+                alert(one*two);
+            }else{
+                alert("연산자를 입력해주세요")
+            }
+        }   
+        }
+    
+        
+
+
+    </script>
+</head>
+<body>
+    <input type="text" id="one"><br>
+    <input type="text" name="" id="oper"><br>
+    <input type="text" id="two"><br>
+    <button onclick="calc()">결과값</button>
+</body>
+</html>
