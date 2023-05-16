@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function checkValue(){
+            // console.log(document.forms[0].elements);
+            // alert(document.forms[0].elements);
+
+            // var id = document.forms[0].elements[0].value;
+            // var pwd = document.forms[0].elements[1].value;
+
+            var id = document.myform.id.value;
+            var pwd = document.myform.pwd.value;
+            var sex = document.myform.sex.value;
+            
+            console.log("====>"+sex+"====");
+
+
+            if(id ==""){
+                alert("ID를 입력하세요.");
+                return false;
+
+            }
+            if(pwd ==""){
+                alert("PWD를 입력하세요.");
+                return false;
+
+            }
+            if(sex==""){
+                alert("성별을 입력하세요");
+                document.myform.sex[1].checked=true;
+                return false;
+            }
+            document.myform.action = "formTest.html";
+            document.myform.method = "get"; // get ,pos
+            document.myform.submit();
+            // var myform = document.forms[0];
+            // myform.setAttribute("action","formTest.html");
+            // myform.submit();
+
+        }
+        
+    </script>
+</head>
+<body>
+    <!-- 로그인 폼에서 전송하기 전에 ID와 PWD 항목에 값이 
+    있는지 확인하고, 값이 없으면, alert으로 안내해준다. -->
+    <!-- <form action="">
+        <input type="text">
+        <input type="password">
+    </form> -->
+<form name = "myform" action="#">
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th><input type="text" name="id"></th>
+        </tr>
+        <tr>
+            <th>PWD</th>
+            <th><input type="password" name = "pwd"></th>
+        </tr>
+        <tr>
+            <th>성별</th>
+            <td>남자 : <input type="radio" name = "sex" value="m">
+                여자 : <input type="radio" name = "sex" value="w">
+            </td>
+
+        </tr>
+
+        <tr>
+            <th colspan="2">
+                <a href ="javascript:checkValue();">로그인</a>
+            </th>
+        </tr>
+    </table>
+</form>
+    
+</body>
+</html>

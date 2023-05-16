@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function keyEventTest(){
+            var data = document.getElementById("data").value;
+            //console.log(data+"==="+data.length);
+            // for(var i =0; i<data.length;i++){
+            //     console.log(data.charAt(i));
+            // }
+            var targetData = data.charAt(data.length-1);
+
+            if(targetData< "0" || targetData >"9"){
+                document.getElementById("data").value = data.substring(0,data.length-1);
+
+            }
+            
+        }
+
+        window.onload = function(){
+            var inputTag= document.getElementById("data");
+
+            inputTag.onkeyup = function(event){
+                console.log(event.keyCode);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" onkeyup= "keyEventTest()" name="" id="data">
+
+</body>
+<!-- 숫자만 입력하려고 한다. 만약 숫자가 아닌 다른 문자가 입력되면 그 문자를 삭제한다. -->
+</html>

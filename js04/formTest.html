@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function init(){
+            var formList = document.forms;
+            console.log(formList);
+
+            alert(document.forms[0].elements[0].value);
+            console.log(document.forms[1]);
+            alert(document.forms[1].two.value);
+        }
+        // document.one.elements.numberValue[3].selected =true;
+        // console.log(document.one.elements.numberValue.value);
+
+       
+    function infoFile(){
+        var fileList = document.one.uploadFile.focus();
+        console.log(fileList[0].name);
+        console.log(fileList[0].size);
+        console.log(fileList[0].type);
+    }
+    </script>
+</head>
+<body onload="init()">
+    
+    <form>
+        <input type="text" value="테스트">
+    </form>
+
+    <button onclick="infoFile()">파일정보 확인</button>
+    <form name = 'one'>
+        <input type="text" name="two"  value = "이름사용" id=""><br>
+
+        <select name="numberValue" id="">
+            <option value="S001">TV</option>
+            <option value="A002">Computer</option>
+            <option value="W003">three</option>
+            <option value="F004">four</option>
+        </select>
+
+        <input type="file" name="uploadFile" id="">
+    </form>
+</body>
+</html>
