@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .high_light-0{
+            background-color: yellow;
+
+        }
+        .high_light-1{
+            background-color: orange;
+        }
+        .high_light-2{
+            background-color: aqua;
+        }
+        .high_light-3{
+            background-color: khaki;
+        }
+        .high_light-4{
+            background-color: gold;
+        }
+    </style>
+    <script src="../jquery-3.7.0.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('h1').each(function(index,h1){
+                $(h1).addClass("high_light-"+index);
+            })
+            // $("h1").addClass('high_light');
+        });
+    </script>
+</head>
+<body>
+    <h1>11111</h1>
+    <h1>22222</h1>
+    <h1>33333</h1>
+    <h1>44444</h1>
+    <h1>55555</h1>
+
+</body>
+</html>

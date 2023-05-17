@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        var content = [
+            {name : "참외씨", region: "인천"},
+            {name : "수박씨", region: "부산"},
+            {name : "호박씨", region: "서울"}
+        ];
+
+        $(document).ready(function(){
+            $("div").append(function(index){
+                var obj = content[index];
+                
+                return obj.name + ":::" +obj.region;
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

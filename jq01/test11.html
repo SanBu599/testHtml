@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .headline{
+            color : papayawhip;
+            width: 150px;
+            height: 70px;
+            background-color: black;
+        }
+
+        .all{
+            color:red;
+        }
+        .other{
+            background-color: green;
+        }
+    </style>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        var xml = '';
+
+        xml += "<friends>";
+        xml += "    <friend>";
+        xml += "        <name>홍길동</name>";
+        xml += "        <language>한국어</language>";
+        xml += "    </friend>";
+        xml += "    <friend>";
+        xml += "        <name>유비</name>";
+        xml += "        <language>중국어</language>";
+        xml += "    </friend>";
+        xml += "    <friend>";
+        xml += "        <name>나카무라</name>";
+        xml += "        <language>일본어</language>";
+        xml += "    </friend>";
+        xml += "</friends>";
+
+        $(document).ready(function(){
+            var xmlData = $.parseXML(xml);
+
+            var data = "";
+            
+            $(xmlData).find("friend").each(function(index,item){
+                var name = $(item).find("name");
+                var lang= $(item).find("language");
+
+                data += "<h1>" +name.text() + "</h1>";
+                data += "<p>" +lang.text()+"</p>";
+            });
+            document.body.innerHTML += data;
+
+            //class 추가
+            $('div').addClass('all').filter(":even").addClass('headline');
+            // console.log($(xmlData).find("friend").length);
+
+
+            //class 제거
+            $("div").removeClass('other');
+        });
+        
+    </script>
+</head>
+<body>
+    <div>   zzzz   </div>
+    <div class="other"> ㅋㅋㅋㅋ </div>
+
+</body>
+</html>

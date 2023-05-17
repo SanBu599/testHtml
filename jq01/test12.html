@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="..//jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+           // $('img').attr("src",'exam.png');
+            
+            // $('img').attr('src',function(){
+            //     return "sample.png";
+            // })
+            
+            var obj ={
+                src : 'obj.png',
+                alt : "객체를 사용한 alt 적용"
+            }
+
+            $('img').attr(obj);
+
+            console.log($('img').attr("src"));//get value
+        });
+    </script>
+</head>
+<body>
+    <img src="test.png" alt="테스트 이미지">
+</body>
+</html>

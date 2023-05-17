@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        1.
+        var name =document.getElementById("name");
+        alert("이름은 2~4글자를 입력하세요.");
+
+        //2.주소 확인
+        //2-1 sido 확인
+        if (sido.value==0){
+            alert("시도를 선택하세여.");
+            sido.focus();
+            return false;
+        }
+        //2.2 gu 확인
+        if(gu.value == "선택하세요"){
+            alert("구를 선택하세요");
+            gu.focus();
+            return false;
+        }
+        //2.3상세주소 확인
+        var datailAddr = document.getElementById("detailAddr");
+        if(detailAddr.value == ""){
+            alert("상세주소를 입력하세요.");
+            detailAddr.focus();
+            return false;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

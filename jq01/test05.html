@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            var data = [
+                {name:"홍",addr:"서울"},
+                {name:"최",addr:"부산"},
+                {name:"고",addr:"대전"},
+                {name:"천",addr:"대구"},
+            ];
+
+            var html = "";
+
+            $.each(data, function(index,item){
+                // console.log(index+":::"+item);
+
+                //console.log(item.name +":::"+item["addr"]);
+                html += "<p>" + index + ":["+item.name+":"+item.addr+"</p>";
+            });
+            
+        });
+        $(document).ready(function(){
+            $("#conent")..html(html){
+            //$("content").html(html){
+                
+                $("#content").innerHTML = html;
+            }
+            // console.log("===>"+$("tr").length);
+
+            // var trList= $("tr");
+            // $.each(trList,function(index,tr){
+            //     if(index%2==0){
+            //         $(tr).css("background-color","green");
+            //     }else{
+            //         $(tr).css("color","red");
+            //     }
+            // });
+
+            //축약해서 표현하면
+            $('tr').each(function(index,tr){
+                if(index%2==0){
+                    $(tr).css("background-color","green");
+                }else{
+                    $(tr).css("color","red");
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div id="'content"></div>
+    <table border="1">
+        <tr>
+            <td>123</td>
+            <td>123</td>
+            <td>123</td>
+        </tr>
+        <tr>
+            <td>abc</td>
+            <td>abc</td>
+            <td>abc</td>
+        </tr>
+        <tr>
+            <td>가나다</td>
+            <td>가나다</td>
+            <td>가나다</td>
+        </tr>
+        <tr>
+            <td>xyz</td>
+            <td>xyz</td>
+            <td>xyz</td>
+        </tr>
+
+    </table>
+</body>
+</html>

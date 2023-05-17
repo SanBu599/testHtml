@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){ //window onload랑 같음
+        //변수의 저장도 가능              //alert("-=-=-=-jquery-=-=-=-");
+            //$('h1').css('color','red');
+            //밑에꺼도 같다.
+            var headline = $('h1');
+            headline.css('color','red').css('background-color','green'); //복수의 ready가능
+        });                             //위에서 부터 순서대로 나옴
+                                    //$(function(){});을 써도 된다.
+        $(function(){
+            //alert("--------jquery-----");
+        });
+        
+    </script>
+</head>
+<body>
+    <h1>하이</h1>
+</body>
+</html>

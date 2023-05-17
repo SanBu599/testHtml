@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('input[name="name"]').val("홍길동");
+            // alert($("input[name='name']").val());
+
+            $('input:text').css('background-color',"gray");
+            $('input:button').val("변경했어요");
+            $("input:radio").attr('checked',true);
+            $('select>option:even').attr('selected',true);
+        })
+    </script>
+</head>
+<body>
+    이름 : <input type="text" name="name" id=""><br>
+    나이 : <input type="text" name="age" id=""><br>
+    <input type="button" name="" id="" value="클릭"><br>
+    <input type="radio" name="" id=""><br>
+    <input type="checkbox" name="" id=""><br>
+    <select>
+        <option>one</option>
+        <option>two</option>
+        <option>three</option>
+        <option>four</option>
+    </select>
+</body>
+</html>

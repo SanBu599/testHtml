@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('select').each(function(){
+                $('select').each(function(index,item){
+                    if($(item).is(".one")){
+                        $(item).css("display","none");
+                    }
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <select name="" id="" class="one">
+        <option value="">일</option>
+        <option value="">이</option>
+        <option value="">삼</option>
+        <option value="">사</option>
+    </select>
+    <select name="" id="" class="two">
+        <option value="">하나</option>
+        <option value="">둘</option>
+        <option value="">셋</option>
+        <option value="">넷</option>
+    </select>
+</body>
+</html>

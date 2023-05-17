@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("tr:even").css('background-color','yellow');
+            $('tr:odd').css('background-color','green');
+
+            $('tr:nth-child(1)').css('background-color','red').css('color','blue');
+
+            $('th:contains("작")').css('color','white');
+            console.log($('td:eq(2)').text());
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성일</th>
+            <th>작성자</th>
+            <th>조회수</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>어린왕자</td>
+            <td>1970.01.01</td>
+            <td>생텍쥐베리</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>성경</td>
+            <td>미상</td>
+            <td>다수</td>
+            <td>1000000</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>홍길동</td>
+            <td>미상</td>
+            <td>허균</td>
+            <td>1020</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>개미</td>
+            <td>1990.01.01</td>
+            <td>베르베르</td>
+            <td>70</td>
+        </tr>
+    </table>
+</body>
+</html>
