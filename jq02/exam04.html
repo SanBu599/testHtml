@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p:first").mouseover(function(){
+                $(this).css("color","red");
+            }).mouseleave(function(){
+                $(this).css("color","green");
+            });
+
+
+            $("p:nth-child(2)").click(function(){
+                alert("제거합니다")
+ㅁ                //$("p:first").attr("onclick","");
+                  //$("p:first").removeAttr("onclick");
+
+                  $("p:first").off("mouseleave");
+            });
+            $("p:last").one("click",function(){
+                alert("-=-=-=한번만=-=-")
+            })
+            
+        });
+
+        function simple(){
+            alert("-------test-------");
+        }
+    </script>
+</head>
+<body>
+    <p onclick="simple()">이벤트 연습</p>
+    <p>이벤트 제거</p>
+    <p>추가했을 때 반응은?</p>
+</body>
+</html>

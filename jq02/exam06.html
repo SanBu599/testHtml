@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            width: 300px;
+            height: 200px;
+            background-color: darkgray;
+            border: 1px solid gray;
+
+        }
+    </style>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            //var context = document.getElementById("canvas").getContext("2d");
+            var context = $('canvas')[0].getContext("2d")
+
+            $("canvas").mousedown(function(event){
+                var x = event.pageX; // x좌표
+                var y = event.pageY; // y좌표
+
+                context.beginPath();
+                context.moveTo(x,y);
+                $("#xyDown").val(x+":"+y);
+            })
+            .mouseup(function(event){
+                var x = event.pageX; // x좌표
+                var y = event.pageY; // y좌표
+
+                context.lineTo(x,y);
+                context.stroke();
+                $("#xyUp").val(x+":"+y);
+            }) 
+            .mousemove(function(event){
+                 var x = event.pageX; // x좌표
+                 var y = event.pageY; // y좌표
+                 $("#xyUp").val(x+":"+y);
+             });
+        });
+    </script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <input type="text" name="" id="xyDown">
+    <input type="text" name="" id="xyUp">
+
+</body>
+</html>
