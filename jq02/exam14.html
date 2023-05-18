@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $(".member").on("change",function(){
+                var isAllChecked =true;
+                var inputList = $(".member");
+
+                for(var i= 0;i<inputList.length;i++){
+                    if(inputList[i].checked ==false){
+                        isAllChecked =false;
+                        break;
+                    }
+                };
+                if (isAllChecked){
+                    $("input:first").prop("checked",true);
+
+                }else{
+                    $("input:first").prop("checked",false);
+                }
+            })
+            // $("input:first").on("change",function(){
+            //     if($(this).prop("checked")==true){
+            //         $("input").prop("checked",true);
+            //     }else{
+            //         $("input").prop("checked",false);
+            //     }
+            // })
+
+
+            // var two = $("#two").on("change",function(){
+            // var three = $("#three").on("change",function(){
+            //         if(two.prop("checked")==true){
+            //              if($(three).prop("checked")==true){
+            //                 $("#one").prop("checked",true);
+            //             }else{
+            //                 $("#one").prop("checked",false);
+            //             }
+            //         }else{
+            //             $("#one").prop("checked",false);
+            //          }
+                    
+            //     })
+
+
+
+            // });  
+        });
+    </script>
+</head>
+<body>  
+    
+        <table border="1">
+            <tr>
+                <th><input type="checkbox" class=""></th>
+                <th>번호</th>
+                <th>고객명</th>
+                <th>아이디</th>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="member"></td>
+                <td>1</td>
+                <td>홍길동</td>
+                <td>abcd</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="member"></td>
+                <td>2</td>
+                <td>임꺽정</td>
+                <td>1123</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="member"></td>
+                <td>2</td>
+                <td>임꺽정</td>
+                <td>1123</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="member"></td>
+                <td>2</td>
+                <td>임꺽정</td>
+                <td>1123</td>
+
+            </tr>
+        </table>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        // textarea에 작성된 문자열의 길이(lengh)를 구하여 p태그에 출력
+        // textarea에 작성된 문자열의 길이가 50자를 넘지 않도록 제한 
+        $(document).ready(function(){
+            $("textarea").on("keyup",function(){
+                var size = $("textarea").val().length;
+
+                if(size > 50 ){
+                    alert("50자까지 입력 가능합니다.");
+                    $("textarea").val($("textarea").val(),substring(0,50));
+                    
+                }
+
+                $("span").html($("textarea").val().substring(0,50).length);
+                
+            });
+            
+        });
+    </script>
+    <style>
+        textarea{
+            width: 300px;
+            height: 200px;
+
+        }
+        p{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <span>0</span>/50자
+    <textarea></textarea>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#outer").mouseover(function(){
+                console.log("mouse over:::");
+            }).mouseenter(function(){
+                console.log("mouse enter :::");
+            });
+        });
+        //mouseenter은 경계선에서 mouseover는 다른 객체에 다이거나 경계를 벗어날때
+    </script>
+    <style>
+        body>div{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        body>div>div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner"></div>
+    </div>
+    
+</body>
+</html>
