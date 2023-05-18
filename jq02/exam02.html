@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("ul").mouseover(function(){
+                $(this).css("color","red");
+            });
+
+
+            $("h1:last").prependTo("div");
+            $("h1:first").clone().appendTo("div");
+            $("ul").clone(true).appendTo("div");
+        });
+    </script>
+</head>
+<body>
+    <h1>Head Line</h1>
+    <h1>오늘의 날씨</h1>
+    <hr>
+    <div>
+        <p>오늘은 전국적으로 비가 오고 있습니다.</p>
+    </div>
+
+    <ul>
+        <li>사과</li>
+        <li>배</li>
+        <li>오렌지</li>
+        <li>딸기</li>
+    </ul>
+</body>
+</html>

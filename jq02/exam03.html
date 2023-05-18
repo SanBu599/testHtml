@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .reverse{
+            color: gold;
+        }
+    </style>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $("h1").on("click",function(){
+            //     $(this).html($(this).html()+"+");
+            // });
+
+            $("h1").on("click",function(){
+                $(this).html(function(index,html){
+                    return html + "+";
+                });
+            });
+
+            // $("h1").click(function(){
+            //     alert("test");
+            // });
+
+            // $("h1").on({
+            //     mouseover : function(){
+            //         $(this).addClass("reverse");
+            //     },
+            //     mouseleave : function(){
+            //         $(this).removeClass("reverse");
+            //     }
+            // });
+
+            $("h1").hover(function(){
+                $(this).addClass("reverse");
+            }, function(){
+                $(this).removeClass("reverse");
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>Base Data</h1>
+</body>
+</html>
