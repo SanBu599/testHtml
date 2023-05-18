@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            var random = parseInt(Math.random()*100)+1
+            console.log(random);
+
+           $("button").click(function(){
+            var inputValue = $("input").val();
+            // console.log(inputValue);
+            if(random==inputValue){
+                $("span").html("<p>정답입니다.</p>");
+            }else if(random<inputValue){
+                $("span").html("<p>더 작은 숫자를 입력하세요.(Down)</p>");
+            }else{
+                $("span").html("<p>더 큰 숫자를 입력하세요.(Up)</p>");
+            }
+           })
+
+        });
+        
+    </script>
+</head>
+<body>
+    <!-- [숫자 맞추기 게임] 
+    1. 1~100 사이의 숫자를 랜덤하게 생성한다.
+    2. 사용자는 숫자를 입력한다.
+    3. 입력한 숫자가 생성된 숫자보다 크면 "더 작은 숫자를 입력하세요.(Down)"를 출력한다.
+-->
+    <p>결과 : <span></span></p>
+    입력 : <input type="text" >
+    <button>전송</button>
+</body>
+</html>
