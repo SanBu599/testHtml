@@ -9,18 +9,24 @@
     <script>
         $(document).ready(function(){
             var random = parseInt(Math.random()*100)+1
-            console.log(random);
+            var count = 0;
+            // console.log(random);
+            ///$("button").on("click",function(){
 
+            //})
            $("button").click(function(){
             var inputValue = $("input").val();
             // console.log(inputValue);
             if(random==inputValue){
-                $("span").html("<p>정답입니다.</p>");
+                $(".result").text("정답입니다.");
             }else if(random<inputValue){
-                $("span").html("<p>더 작은 숫자를 입력하세요.(Down)</p>");
+                $(".result").text("더 작은 숫자를 입력하세요.(Down)");
             }else{
-                $("span").html("<p>더 큰 숫자를 입력하세요.(Up)</p>");
+                $(".result").text("더 큰 숫자를 입력하세요.(Up)");
             }
+            count++;
+
+            $(".count").text(count);
            })
 
         });
@@ -33,7 +39,7 @@
     2. 사용자는 숫자를 입력한다.
     3. 입력한 숫자가 생성된 숫자보다 크면 "더 작은 숫자를 입력하세요.(Down)"를 출력한다.
 -->
-    <p>결과 : <span></span></p>
+    <p>결과 : <span class ="count">0</span><span class="result"></span ></p>
     입력 : <input type="text" >
     <button>전송</button>
 </body>
