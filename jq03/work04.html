@@ -13,13 +13,83 @@
             ["1","2","3","*"],
             ["0",".","=","/"]
         ];
+        function initButton(){
+            for(var i=0;i<buttonList.length;i++){
+                var subButton = buttonList[i];
 
+                var tr ="<tr>";
+                    for(var j=0;j<buttonList.length;j++){
+                        tr += "<td><button>"+ subButton[j] +"</button></td>"
+                    }
+                    tr += "</tr>";
+                    $("#buttonList").append(tr);
+            };
+        };
+    
         $(document).ready(function(){
-            for(i=0;i<buttonList.length;i++){
-                for(j=0;j)
-            }
-        })
+            //버튼정리
+            initButton();
+
+
+            var firstVal = 0;
+            var operVal = "";
+            //이벤트 연결
+            $("button").on("click",function(){
+                //console.log("------"+$(this).text())
+                var buttonVal = $(this).text();
+                var curVal = $("#result").val();
+                if(buttonVal== "+"||buttonVal=="-"||buttonVal=="*"||buttonVal=="/"){
+                    //1. 현재 textfield 데이터의 resultaval를 연산한다.
+                    //2. 이때, 연산이 최초 수행된 것이면, 단순 + 를 한다.
+                    if(operVal==""){
+                        resultVal=resultVal+parseFloat($("#result").val())
+                    }
+                    
+                    operVal = $(this).text();
+                    $("#result").val("");
+                    }else if(buttonVal=="="){
+                    
+                        if(operVal == "+"){
+                            resultVal= resultVal + parseFloat("#result").val();
+                        }else if(operVal == "-"){
+                            resultVal= resultVal - parseFloat("#result").val();
+                        }else if(operVal =="*"){
+                            resultVal= resultVal * parseFloat("#result").val();
+                        }else if(operVal =="/"){
+                            resultVal= resultVal / parseFloat("#result").val();
+                        }
+                        $("#result").val(resultVal);
+
+                        operVal="";
+                        resultVal =0;
+                }else{
+                    $("#result").val(curVal + $(this).text());
+                }
+                
+                
+        });
+    
+            
+        });
     </script>
+    <style>
+        button{
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            font-size : 2rem;
+            border-radius: 1rem;
+        }
+        input{
+            border-radius: 1rem;
+            font-size: 2rem;
+            width: 200px;
+            height: 50px;
+            text-align: right;
+            box-sizing: border-box;
+            padding-right: 15px;
+        }
+    </style>
 </head>
 <body>
     <table id ="calc">
