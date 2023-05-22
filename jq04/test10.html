@@ -63,6 +63,7 @@
         }
     </style>
     <script src="../jquery-3.7.0.js"></script>
+    <script src="../jquery.innerfade.js"></script>
     <script>
         function moveSlider(index){
             // 배경 이미지 이동 설정
@@ -80,8 +81,13 @@
             // $(".slider_text[data-index='" +index + "']").css("left",0);
 
             //글자 이동 설정
-            $(".slider_text[data-index ='"+ index + "']").animate({left:"0px"},1000)
-            $(".slider_text[data-index !='"+ index + "']").animate({left:"-300px"},1000)
+            $(".slider_text[data-index ='"+ index + "']").show().animate({left:"0px"},1000)
+            $(".slider_text[data-index !='"+ index + "']").hide("slow",function(){
+                $(this).css("left","-300px")
+            });
+            $(".control_button[data-index !='"+index+ "']").removeClass("active")
+            $(".control_button[data-index ='"+index+ "']").removeClass("active")
+                $(this).addClass("active")
         }
         $(document).ready(function(){
             var randomNumber = parseInt(Math.random()* $(".control_button").length);
@@ -95,9 +101,37 @@
                 $(this).attr("data-index",index);
             }).click(function(){
                 moveSlider($(this).attr("data-index"));
-                $(".control_button").removeClass("active")
-                $(this).addClass("active")
+               
             });
+
+            var count = 0 ; 
+            var interval = setInterval(function(){
+                moveSlider(count% $(".control_button").length);
+                count++;
+            },3000);
+            // $(".slider_panel .slider_text_panel").innerfade({
+            //     animationtype:"fade",
+            //     speed:750,
+            //     timeout:3000,
+            //     containerheight:"350px"
+            // })
+            $(".toggle_button").click(function(){
+                var buttonName = $(this).text();
+
+                if(buttonName =="중지"){
+                    $(this).text("실행");
+                    clearInterval(interval);
+                }else{
+                    $(this).text("중지")
+                interval = setInterval(function(){
+                    moveSlider(count% $(".control_button").length);
+                    count++;
+                },3000)
+                    
+                
+                }
+            })
+          
         });
     </script>
 </head>
@@ -142,6 +176,7 @@
             <div class="control_button"></div>
         </div>
     </div>
+    <button class="toggle_button">중지</button>
     <h1>Bottom</h1>
 </body>
 </html>
