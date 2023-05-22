@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.js"></script>
+    <script src="../jquery.innerfade.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#inner-fade").innerfade({
+                animationtype:"slide",
+                speed:750,
+                timeout:2000,
+                //type:"",
+                containerheight:"350px"
+                
+                
+            });
+        });
+    </script>
+    <style>
+        p{
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "inner-fade">
+        <p style="background-color: red;">One</p>
+        <p style="background-color: green;">Two</p>
+        <p style="background-color: blue">Three</p>
+        <p style="background-color: yellow">Four</p>
+        <p style="background-color: navy">Five</p>
+    </div>
+    
+</body>
+</html>
