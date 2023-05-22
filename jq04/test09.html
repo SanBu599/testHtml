@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* * {
+            margin: 0px;
+            padding: 0px;
+        } */
+
+        #canvas{
+            background-color: green;
+            width: 600;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .inner_box{
+            background-color: gold;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+    </style>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".inner_box").each(function(index){
+                $(this).css("left",index * 90).css("top",index*90)
+                
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>Top</h1>
+    <div id="canvas">
+        <div class="inner_box"></div>
+        <div class="inner_box"></div>
+        <div class="inner_box"></div>
+        <div class="inner_box"></div>
+        <div class="inner_box"></div>
+    </div>
+    <h1>Bottom</h1>
+    
+
+</body>
+</html>

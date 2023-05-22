@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../jquery-ui-1.10.3.custom.min.css">
+    <style>
+        .reverse{
+            color: white;
+            background-color: black;
+        }
+    </style>
+    <script src="../jquery-3.7.0.js"></script>
+    <script src="../jquery-ui-1.10.3.custom.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("div").hover(function(){
+                $(this).addClass("reverse",2000);
+            },function(){
+                $(this).removeClass("reverse",2000)
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Head Line</h1>
+        <p>ㅋㅋㅋ, ㅣㅣㅣ</p>
+    </div>
+    <div>
+        <h1>Head Line</h1>
+        <p>ㅋㅋㅋ, ㅣㅣㅣ</p>
+    </div>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{
+            margin: 0px;
+            padding: 0px;
+        } */
+        /* Animation Canvas */
+        .animation_cavas{
+            overflow: hidden;
+            position: relative;
+            width: 600px;
+            height: 400px;
+        }
+        /* Slider Panel */
+        .slider_panel{
+            width: 3000px;
+            position: relative;
+        }
+        .slider_image{
+            width: 600px;
+            height: 400px;
+            float: left;
+        }
+        /* Slider Text Panel */
+        .slider_text_panel{
+            position: absolute;
+            top: 200px;
+            left: 50px;
+        }
+        .slider_text{
+            position: absolute;
+            width: 250px;
+            height: 150px;
+            color: white;
+        }
+        /* Control panel */
+        .control_panel{
+            position: absolute;
+            top: 380px;
+            left: 270px;
+            height: 13px;
+            overflow: hidden;
+        }
+        .control_button{
+            width: 12px;
+            height: 46px;
+            position: relative;
+            float: left;
+            cursor: pointer;
+            background: url(../point_button.png);
+        }
+        .control_button:hover{
+            top: -16px;
+        }
+        .control_button.active{
+            top: -31px;
+        }
+    </style>
+    <script src="../jquery-3.7.0.js"></script>
+    <script>
+        function moveSlider(index){
+            // 배경 이미지 이동 설정
+            // index : 0==> left: 0px
+            // index : 1==> left: -600px
+            // index : 2==> left: -1200px
+            // index : 3==> left: -1800px
+
+            var leftMoveLength = index * -600;
+            $(".slider_panel").animate({left :leftMoveLength},1000)
+
+            // 모든 글자를 숨긴다.
+            // $(".slider_text").css("left",-300);
+            // // 해당하는 인덱스의 글자를 회면에 노출(이동)시킨다.
+            // $(".slider_text[data-index='" +index + "']").css("left",0);
+
+            //글자 이동 설정
+            $(".slider_text[data-index ='"+ index + "']").animate({left:"0px"},1000)
+            $(".slider_text[data-index !='"+ index + "']").animate({left:"-300px"},1000)
+        }
+        $(document).ready(function(){
+            var randomNumber = parseInt(Math.random()* $(".control_button").length);
+            moveSlider(randomNumber)
+            $(".slider_text").css("left",-300).each(function(index){
+                $(this).attr("data-index",index);
+
+            });
+
+            $(".control_button").each(function(index){
+                $(this).attr("data-index",index);
+            }).click(function(){
+                moveSlider($(this).attr("data-index"));
+                $(".control_button").removeClass("active")
+                $(this).addClass("active")
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Top</h1>
+    <div class="animation_canvas">
+        <div class="slider_panel">
+            <img  class="slider_image" src="../18장/Desert.jpg">
+            <img  class="slider_image" src="../18장/Hydrangeas.jpg">
+            <img  class="slider_image" src="../18장/Jellyfish.jpg">
+            <img  class="slider_image" src="../18장/Koala.jpg">
+            <img  class="slider_image" src="../18장/Lighthouse.jpg">            
+
+        </div>
+        <div class="slider_text_panel">
+            <div class="slider_text">
+                <h1>첫번째</h1>
+                <p>첫번째 이미지 입니다.</p>
+            </div>
+            <div class="slider_text">
+                <h1>두번째</h1>
+                <p>두번째 이미지 입니다.</p>
+            </div>
+            <div class="slider_text">
+                <h1>세번째</h1>
+                <p>세번째 이미지 입니다.</p>
+            </div>
+            <div class="slider_text">
+                <h1>네번째</h1>
+                <p>네번째 이미지 입니다.</p>
+            </div>
+            <div class="slider_text">
+                <h1>다섯번째</h1>
+                <p>다섯번째 이미지 입니다.</p>
+            </div>
+        </div>
+        <div class="control_panel">
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+        </div>
+    </div>
+    <h1>Bottom</h1>
+</body>
+</html>
